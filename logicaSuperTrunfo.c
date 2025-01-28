@@ -125,7 +125,7 @@
         */
 
         // Imprime menu com as opções de atributos para comparação
-        printf("\nAgora, escolha quais atributos serão usados para comparação:\n");
+        printf("\nAgora, escolha qual atributo será usados para comparação:\n");
         printf("1 - População\n");
         printf("2 - Área\n");
         printf("3 - PIB\n");
