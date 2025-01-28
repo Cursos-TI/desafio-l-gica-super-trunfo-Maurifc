@@ -4,7 +4,6 @@
         /*
         VARIÁVEIS
         */
-        
         // variáveis para a carta 1
         char estado;                  // espaço em memória para armazenar  um caractere que representa o estado
         char nomeCidade[51];          // espaço em memória para armazenar o nome da cidade com suporte a 50 caracteres
@@ -28,6 +27,9 @@
         float densidadePopulacional2;
         float pibPerCapita2;
         float superPoder2;
+
+        // variável para menu de atributos
+        int atributoEscolhido;
         
         /*
         CARTA 1
@@ -121,16 +123,94 @@
         /*
         COMPARAÇÃO DAS CARTAS
         */
-        
-        // Comparação baseada na propriedade PIB. Vence a carta com maior PIB.
-        printf("\nComparando o PIB das cartas...\n");
-        if (pib > pib2) {                                                       // verifica se pib da carta 1 é maior que pib da carta 2
-            printf("A carta 1 (%s) venceu!\n", codigoCarta);
-        } else if (pib < pib2) {                                                // verifica se pib da carta 1 é menor que pib da carta 2
-            printf("A carta 2 (%s) venceu!\n", codigoCarta2);
-        } else {                                                                // se o pib da carta 1 não é menor nem maior que o da carta 2, então ele é igual, por tanto, é empate
-            printf("Empate!\n");
-        }   
 
+        // Imprime menu com as opções de atributos para comparação
+        printf("\nAgora, escolha quais atributos serão usados para comparação:\n");
+        printf("1 - População\n");
+        printf("2 - Área\n");
+        printf("3 - PIB\n");
+        printf("4 - Pontos Turísticos\n");
+        printf("5 - Densidade Populacional\n");
+        printf("6 - PIB per Capita\n");
+        printf("7 - Super-poder\n");
+        scanf("%d", &atributoEscolhido);
+
+        printf("\nComparando as cartas...\n");
+        switch (atributoEscolhido)                                              // verifica qual atributo foi escolhido pelo jogador
+        {
+        case 1:                                                                 // População selecionado
+            printf("O atributo de comparação escolhido é 'População'\n");
+            if(populacao > populacao2){
+                printf("A carta 1 (%c%s) venceu!\n", estado, codigoCarta);
+            } else if (populacao < populacao2) {
+                printf("A carta 2 (%c%s) venceu!\n", estado, codigoCarta2);
+            } else {                                                            // se não é maior e nem menor, então é igual (empate)
+                printf("Empate!\n");
+            }   
+            break;
+        case 2:                                                                 // Área selecionado    
+            printf("O atributo de comparação escolhido é 'Área'\n");
+            if(area > area2){
+                printf("A carta 1 (%c%s) venceu!\n", estado, codigoCarta);
+            } else if (area < area2) {
+                printf("A carta 2 (%c%s) venceu!\n", estado, codigoCarta2);
+            } else {                                                            // se não é maior e nem menor, então é igual (empate)
+                printf("Empate!\n");
+            }   
+            break;
+        case 3:                                                                 // PIB selecionado
+            printf("O atributo de comparação escolhido é 'PIB'\n");
+            if(pib > pib2){
+                printf("A carta 1 (%c%s) venceu!\n", estado, codigoCarta);
+            } else if (pib < pib2) {
+                printf("A carta 2 (%c%s) venceu!\n", estado, codigoCarta2);
+            } else {                                                            // se não é maior e nem menor, então é igual (empate)
+                printf("Empate!\n");
+            }   
+            break;
+        case 4:                                                                 // Número de Pontos Turísticos selecionado
+            printf("O atributo de comparação escolhido é 'Número de Pontos Turísticos'\n");
+            if(numeroPontosTuristicos > numeroPontosTuristicos2){
+                printf("A carta 1 (%c%s) venceu!\n", estado, codigoCarta);
+            } else if (numeroPontosTuristicos < numeroPontosTuristicos2) {
+                printf("A carta 2 (%c%s) venceu!\n", estado, codigoCarta2);
+            } else {                                                            // se não é maior e nem menor, então é igual (empate)
+                printf("Empate!\n");
+            }   
+            break;
+        case 5:                                                                 // Densidade Populacional selecionado
+            printf("O atributo de comparação escolhido é 'Densidade Populacional'\n");
+            if(densidadePopulacional < densidadePopulacional2){                         // vence quem tem a menor densidade populacional
+                printf("A carta 1 (%c%s) venceu!\n", estado, codigoCarta);
+            } else if (densidadePopulacional > densidadePopulacional2) {
+                printf("A carta 2 (%c%s) venceu!\n", estado, codigoCarta2);
+            } else {                                                                    // se não é maior e nem menor, então é igual (empate)
+                printf("Empate!\n");
+            }   
+            break;
+        case 6:                                                                 // PIB per Capita selecionado
+            printf("O atributo de comparação escolhido é 'PIB per Capita'\n");
+            if(pibPerCapita > pibPerCapita2){
+                printf("A carta 1 (%c%s) venceu!\n", estado, codigoCarta);
+            } else if (pibPerCapita < pibPerCapita2) {
+                printf("A carta 2 (%c%s) venceu!\n", estado, codigoCarta2);
+            } else {                                                                // se não é maior e nem menor, então é igual (empate)
+                printf("Empate!\n");
+            }
+            break;
+        case 7:                                                                 // Super poder selecionado
+            printf("O atributo de comparação escolhido é 'Super Poder'\n");
+            if(superPoder > superPoder2){
+                printf("A carta 1 (%c%s) venceu!\n", estado, codigoCarta);
+            } else if (superPoder < superPoder2) {
+                printf("A carta 2 (%c%s) venceu!\n", estado, codigoCarta2);
+            } else {                                                    // se não é maior e nem menor, então é igual (empate)
+                printf("Empate!\n");
+            }
+            break;
+        default:
+            break;
+        }
+        
         return 0;
     }
